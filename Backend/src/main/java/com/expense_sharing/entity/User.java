@@ -28,7 +28,7 @@ public class User {
     @Column(name = "phone_no", nullable = false, unique = true)
     private String phoneNo;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "members")
     private List<Group> groups;
 
     @OneToMany(mappedBy = "paidBy")

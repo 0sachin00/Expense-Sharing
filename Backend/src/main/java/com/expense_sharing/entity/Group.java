@@ -28,7 +28,15 @@ public class Group {
             joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private List<User> users;
+    private List<User> members;
+
+    @ManyToMany
+    @JoinTable(
+            name = "group_admins",
+            joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> admins;
 
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<Expense> expenses;

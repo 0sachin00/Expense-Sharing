@@ -5,16 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponse {
-    private long id;
+public class GroupResponse {
+    private long groupId;
     private String name;
-    private String email;
-    private String phoneNo;
-    private BigDecimal balance;
+    private List<UserResponse> users;
+    private List<UserResponse> admins;
 }
